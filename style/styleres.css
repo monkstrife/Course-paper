@@ -1,0 +1,86 @@
+:root {
+    --size: 300px;
+}
+
+html, body {
+    max-height: calc(var(--size)*3);
+    height: calc(var(--size));
+}
+
+body {
+    background: url('../img/index_bg.jpg')no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+
+#table {
+    /* color befor = 3f0054dd;*/
+    position: relative;
+    margin: auto;
+    width: var(--size);
+    height: var(--size);
+    top: 40%;
+    border: #135565 calc(var(--size)*0.01) solid;
+    border-radius: 10.5%;
+    
+    background: transparent;
+    backdrop-filter: blur(15px);
+}
+
+#name_table {
+    position: absolute;
+    width: 100%;
+    bottom: calc(var(--size) + 50px);
+    text-align: center;
+    font-weight: 700;
+    color: #135565;
+    font-size: calc(var(--size)*0.1);
+}
+
+
+ul {
+    margin: 0% 0%;
+    padding: 0% 0%;
+    list-style: none;
+}
+
+li {
+    position: relative;
+
+    padding: calc(var(--size)*0.01);
+
+    margin-left: 7%;
+
+    text-align: center;
+    font-size: calc(var(--size)*0.05);
+    font-weight: 700;
+    color: rgb(0, 49, 48);
+}
+
+/* кнопка назад */
+.block_back {
+    position: absolute;
+    width: calc(var(--size)*0.5);
+    height: calc(var(--size)*0.5);
+    border: #00115e calc(var(--size)*0.01) solid;
+    border-radius: 10.5%;
+    top: 1%;
+
+    line-height: calc(var(--size)*0.5);
+    text-align: center;
+    font-size: calc(var(--size)*0.1);
+    font-weight: 700;
+
+    background: transparent;
+    backdrop-filter: blur(15px);
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #00115e;
+    border-radius: 10.5%
+}

@@ -1,0 +1,500 @@
+:root {
+    --size: 300px;
+}
+
+html, body {
+    max-height: calc(var(--size)*3);
+    height: calc(var(--size));
+}
+
+body {
+    background: linear-gradient(45deg, #00F260, #0575E6);
+    background-attachment: fixed;
+    background-size: 150% 150%;
+    animation: gradient_animation 5s ease infinite;
+}
+
+@keyframes gradient_animation {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+/* список уровней игры */
+#block_levels {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+#block_levels ul {
+    margin: 0% 0%;
+    padding: 0% 0%;
+    list-style: none;
+
+    padding-top: 2%;
+}
+
+#block_levels ul li {
+    display: inline;
+    padding: calc(var(--size)*0.1);
+
+    margin-left: 5%;
+
+    text-align: center;
+    font-size: calc(var(--size)*0.07);
+    cursor: move;
+    background-color: aquamarine;
+    
+    border: #021920 calc(var(--size)*0.002) solid;
+
+    border-radius: 20% 20% 20% 20% /20% 20% 20% 20%;
+}
+
+#block_levels ul li:first-child {
+    margin-left: -6%;
+}
+
+/* класс перемещаемого элемента */
+.dragging {
+    opacity: 0.5;
+}
+
+/* Блок с описанием */
+#desc_block {
+    position: relative;
+    margin: auto;
+    width: calc(var(--size)*1.5);
+    height: calc(var(--size)*1.5);
+    top: 15%;
+    border: rgb(0, 73, 125) calc(var(--size)*0.01) solid;
+    border-radius: 11%;
+
+    background-color: rgb(234, 245, 255);
+}
+
+#desc_text {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    color: rgb(0, 73, 125);
+    font-weight: 600;
+    font-size: calc(var(--size)*0.09);
+
+    /* background-color: #00F260; */
+    width: 90%;
+    height: 80%;
+}
+
+#to_play {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    width: 40%;
+    cursor: move;
+
+    font-weight: 400;
+    font-size: calc(var(--size)*0.09);
+    background-color: rgb(0, 151, 201);
+    border: #021920 calc(var(--size)*0.002) solid;
+}
+
+#buttun_result_page {
+    position: absolute;
+    margin: 0 41.5%;
+    width: calc(var(--size)*0.6);
+    height: calc(var(--size)*0.1);
+    top: calc(var(--size)*2);
+    border: #021920 calc(var(--size)*0.002) solid;
+    border-radius: 10% 10% 10% 10% / 10% 10% 10% 10%;
+    text-align: center;
+    font-size: calc(var(--size)*0.07);
+
+    padding: calc(var(--size)*0.1);
+    font-weight: 500;
+
+    background-color: aquamarine;
+    cursor: move;
+}
+
+/* таймер */
+#slider {
+    height: 5%;
+    background-color: rgb(0, 255, 179);
+    border-radius: 2% 2% 2% 2% / 100% 100% 100% 100%;
+}
+
+#timer {
+    font-size: calc(var(--size)*0.1);
+    text-align: center;
+}
+
+/* фото */
+#div_img {
+    position: relative;
+    text-align: center;
+}
+
+img {
+    width: calc(var(--size)*1);
+    height: calc(var(--size)*1);
+    border: #021920 calc(var(--size)*0.002) solid;
+}
+
+/* список вопросов */
+#block_question_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+#block_question_1 ul {
+    margin: 0% 0%;
+    padding: 0% 0%;
+    list-style: none;
+
+    padding-top: 5%;
+}
+
+#block_question_1 ul li {
+    position: relative;
+
+    display: inline;
+    padding: calc(var(--size)*0.01);
+
+    margin-left: 10%;
+
+    text-align: center;
+    font-size: calc(var(--size)*0.1);
+    color: rgb(0, 49, 48);
+    cursor: move;
+    
+}
+
+#block_question_1 ul li:first-child {
+    margin-left: -10%;
+}
+
+#block_question_1 ul li{
+    background: linear-gradient(rgb(0, 49, 48) 0 0) bottom /var(--t, 0) calc(var(--size)*0.02) no-repeat;
+    transition: .5s;
+}
+
+#block_question_1 ul li:hover{
+    --t: 100%;
+}
+
+/* слайдер для вопросов */
+#block_slider {
+    position: relative;
+    margin: auto;
+    width: 30%;
+    height: 5%;
+    /* background-color: #00F260; */
+    border: #021920 calc(var(--size)*0.002) solid;
+    top: 65%;
+}
+
+#sub_block_slider {
+    position: relative;
+    width: 0%;
+    height: 100%;
+    background-color: #00F260;
+}
+
+/* блок некст */
+#block_next {
+    position: relative;
+    margin: auto;
+    width: calc(var(--size)*1);
+    height: 10%;
+    top: 60%;
+    border: #021920 calc(var(--size)*0.002) solid;
+    border-radius: 10% 10% 10% 10% / 50% 50% 50% 50%;
+    cursor: move;
+    text-align: center;
+    font-size: calc(var(--size)*0.07);;
+    background: linear-gradient(45deg, #00f29d, #008d00);
+}
+
+/* блоки результатов */
+#block_result {
+    position: relative;
+    margin: auto;
+    width: calc(var(--size)*1);
+    height: calc(var(--size)*0.15);
+    top: calc(var(--size));
+    border: rgb(0, 73, 125) calc(var(--size)*0.01) solid;
+    border-radius: 10% 10% 10% 10% /100% 100% 100% 100%;
+    text-align: center;
+    font-size: calc(var(--size)*0.1);
+
+    background-color: rgb(234, 245, 255);
+}
+
+#block_restart {
+    position: relative;
+    margin: auto;
+    width: calc(var(--size)*1);
+    height: 10%;
+    top: 120%;
+    border: #021920 calc(var(--size)*0.002) solid;
+    cursor: move;
+    text-align: center;
+    font-size: calc(var(--size)*0.07);;
+    background: linear-gradient(45deg, #59C173, #a17fe0, #5D26C1);
+    border-radius: 10% 10% 10% 10% /100% 100% 100% 100%;
+}
+
+#to_menu {
+    position: relative;
+    margin: auto;
+    width: calc(var(--size)*1);
+    height: 10%;
+    top: 140%;
+    border: #021920 calc(var(--size)*0.002) solid;
+    cursor: move;
+    text-align: center;
+    font-size: calc(var(--size)*0.07);;
+    background: linear-gradient(45deg, #59C173, #a17fe0, #5D26C1);
+    border-radius: 10% 10% 10% 10% /100% 100% 100% 100%;
+}
+
+/* анимации */
+@keyframes anim_slider_1 {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 20%;
+    }
+}
+
+@keyframes anim_slider_2 {
+    0% {
+        width: 20%;
+    }
+    100% {
+        width: 40%;
+    }
+}
+
+@keyframes anim_slider_3 {
+    0% {
+        width: 40%;
+    }
+    100% {
+        width: 60%;
+    }
+}
+
+@keyframes anim_slider_4 {
+    0% {
+        width: 60%;
+    }
+    100% {
+        width: 80%;
+    }
+}
+
+@keyframes anim_slider_5 {
+    0% {
+        width: 80%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes run_out {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        opacity: 0%;
+        transform: translateX(var(--size));
+        display: none;
+    }
+}
+
+@keyframes del {
+    100% {
+        display: none;
+    }
+}
+
+/* для 2-го уровня */
+
+#block_basket1, #block_basket2, #block_basket3 {
+    position: relative;
+    margin: auto;
+    width: calc(var(--size)*1);
+    height: calc(var(--size)*1.5);
+    border: rgb(0, 73, 125) calc(var(--size)*0.01) solid;
+    border-radius: 10% 10% 10% 10% / 10% 10% 10% 10%;
+
+    background-color: rgb(234, 245, 255);
+}
+
+#block_basket1 {
+    top: calc(var(--size)*0.02);
+    bottom: calc(var(--size)*1.52);
+}
+
+#block_basket2 {
+    left: calc(var(--size)*(-1.5));
+    bottom: calc(var(--size)*1.52);
+}
+
+#block_basket3 {
+    left: calc(var(--size)*1.5);
+    bottom: calc(var(--size)*3.02);
+}
+
+.word_list {
+    /* тут надо занулить, тк список почему поумолчанию с какими-то margin и padding */
+    margin: 0% 0%;
+    padding: 0% 0%;
+
+    list-style: none;
+    padding-left: 25%;
+}
+
+.word_item {
+    text-align: center;
+    cursor: move;
+    background-color: aquamarine;
+
+    width: 60%;
+    margin: 5%;
+    border: #021920 calc(var(--size)*0.002) solid;
+
+    border-radius: 15% 15% 15% 15% /50% 50% 50% 50%;
+}
+
+#block_buttun_result_2 {
+    position: relative;
+    margin: auto;
+    width: calc(var(--size)*1);
+    height: calc(var(--size)*0.12);
+    /* top: calc(var(--size)); */
+    border: rgb(85, 44, 18) calc(var(--size)*0.01) solid;
+    border-radius: 10% 10% 10% 10% /100% 100% 100% 100%;
+    text-align: center;
+    font-size: calc(var(--size)*0.1);
+    cursor: move;
+
+    background-color: rgb(255, 166, 110);
+}
+
+/* для уровня 3 */
+.blocks_falling {
+    position: absolute;
+    width: calc(var(--size)*0.5);
+    height: calc(var(--size)*0.2);
+    cursor: move;
+    top: 0%;
+    background-color: rgb(135, 235, 173);
+    border: rgb(42, 104, 66) calc(var(--size)*0.01) solid;
+    border-radius: 10% 10% 10% 10% /10% 10% 10% 10%;
+    z-index: 2;
+    text-align: center;
+    font-size: calc(var(--size)*0.07);
+
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.anim_paused {
+    animation: opac 1s forwards;
+}
+
+@keyframes opac {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+#block_buttun_result_3 {
+    position: relative;
+    margin: auto;
+    width: calc(var(--size)*1);
+    height: calc(var(--size)*0.12);
+    border: #105a79 calc(var(--size)*0.01) solid;
+    border-radius: 10% 10% 10% 10% /100% 100% 100% 100%;
+    text-align: center;
+    font-size: calc(var(--size)*0.1);
+    cursor: move;
+    bottom: 220%;
+    left: 40%;
+
+    background-color: #32b6ee;
+    z-index: 1;
+
+    /* отключаем выделение, чтобы не мешало */
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#block_place {
+    position: relative;
+    margin: auto;
+
+    width: 30%;
+    height: 220%;
+
+    background: linear-gradient(45deg, #36f19d, #32b6ee);
+    border: rgb(15, 0, 37) calc(var(--size)*0.03) solid;
+    z-index: 1;
+}
+
+
+/* фото */
+#div_img3 {
+    position: absolute;
+    text-align: center;
+    /* left: calc(var(--size)*(2.5)); */
+    bottom: 50%;
+    z-index: 0;
+}
+
+/* кнопка назад */
+.block_back {
+    position: absolute;
+    width: calc(var(--size)*0.5);
+    height: calc(var(--size)*0.5);
+    border: #00115e calc(var(--size)*0.01) solid;
+    border-radius: 10.5%;
+    top: 1%;
+    cursor: move;
+
+    line-height: calc(var(--size)*0.5);
+    text-align: center;
+    font-size: calc(var(--size)*0.1);
+    font-weight: 700;
+    color: #00115e;
+
+    background-color: #cfd3e7;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #00115e;
+    border-radius: 10.5%
+}

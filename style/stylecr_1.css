@@ -1,0 +1,71 @@
+:root {
+    --size: 300px;
+}
+
+html, body {
+    max-height: calc(var(--size)*3);
+    height: calc(var(--size));
+}
+
+body {
+    background: linear-gradient(45deg, #cc2b5e, #753a88);
+    background-attachment: fixed;
+    background-size: 150% 150%;
+    animation: gradient_animation 5s ease infinite;
+}
+
+@keyframes gradient_animation {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+#auth {
+    position: relative;
+    margin: auto;
+    width: var(--size);
+    height: calc(var(--size)*0.8);
+    top: 40%;
+    border: rgb(167, 2, 121) calc(var(--size)*0.01) solid;
+    border-radius: 11%;
+
+    background-color: rgb(234, 245, 255);
+}
+
+#auth_name {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    color: rgb(167, 2, 121);
+    font-weight: 600;
+    font-size: calc(var(--size)*0.09);
+    top:15%;
+}
+
+#inp_text {
+    position: relative;
+    margin: auto;
+    top: 30%;
+}
+
+#inp_text {
+    width: calc(var(--size)*0.6);
+}
+
+#text1 {
+    width: 100%;
+    height: 100%;
+}
+
+#to_auth {
+    position: relative;
+    margin: auto;
+    top: 40%;
+    text-align: center;
+}
