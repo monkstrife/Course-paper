@@ -37,7 +37,5 @@ function func() {
 
     localStorage.setItem("cur_player", "player_" + count_players);
 
-    alert(localStorage.getItem("player_1"));
-
     window.location.replace("game.html");
 }
